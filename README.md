@@ -107,7 +107,7 @@ DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@127.0.0.1:5432/placementjava
 .\run.ps1
 ```
 
-The app will start at **http://localhost:2081**
+The app will start at **http://localhost:8081**
 
 ---
 
