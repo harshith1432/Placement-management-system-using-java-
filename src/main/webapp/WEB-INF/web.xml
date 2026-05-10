@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+
+    <display-name>Placement Management System</display-name>
+
+    <!-- Filters -->
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.placement.filters.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Servlets -->
+    
+    <!-- Auth & Logout -->
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>com.placement.servlets.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- Admin Modules -->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.placement.servlets.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminStudentServlet</servlet-name>
+        <servlet-class>com.placement.servlets.AdminStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminStudentServlet</servlet-name>
+        <url-pattern>/admin/students</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminCompanyServlet</servlet-name>
+        <servlet-class>com.placement.servlets.AdminCompanyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminCompanyServlet</servlet-name>
+        <url-pattern>/admin/companies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminDriveServlet</servlet-name>
+        <servlet-class>com.placement.servlets.AdminDriveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminDriveServlet</servlet-name>
+        <url-pattern>/admin/drives</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminReportServlet</servlet-name>
+        <servlet-class>com.placement.servlets.AdminReportServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminReportServlet</servlet-name>
+        <url-pattern>/admin/reports</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminProfileServlet</servlet-name>
+        <servlet-class>com.placement.servlets.AdminProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminProfileServlet</servlet-name>
+        <url-pattern>/admin/profile</url-pattern>
+    </servlet-mapping>
+
+    <!-- Student & Company Modules (Public/User) -->
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.placement.servlets.StudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/student</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CompanyServlet</servlet-name>
+        <servlet-class>com.placement.servlets.CompanyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CompanyServlet</servlet-name>
+        <url-pattern>/company</url-pattern>
+    </servlet-mapping>
+
+    <!-- APIs & Utils -->
+    <servlet>
+        <servlet-name>DashboardDataServlet</servlet-name>
+        <servlet-class>com.placement.servlets.DashboardDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DashboardDataServlet</servlet-name>
+        <url-pattern>/api/dashboard-data</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NotificationServlet</servlet-name>
+        <servlet-class>com.placement.servlets.NotificationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NotificationServlet</servlet-name>
+        <url-pattern>/api/notifications</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.placement.servlets.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/api/search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchPageServlet</servlet-name>
+        <servlet-class>com.placement.servlets.SearchPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchPageServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+    <!-- Forgot Password Module -->
+    <servlet>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <servlet-class>com.placement.servlets.ForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <url-pattern>/forgot-password</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
